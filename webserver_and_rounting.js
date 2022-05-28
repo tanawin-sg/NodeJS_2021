@@ -1,14 +1,21 @@
-// สร้างเว็บ Server ด้วย NodeJS
+// ทำ Rounting ใช้ req.url รับ path url มาตรวจสอบและสั่งทำงาน 
 const http = require('http');
 
 const server = http.createServer((req,res)=>{
     const pathName = req.url
     console.log("url = "+pathName)
-    const prm_hrml = ('\
-    \<h1>Hello Node.JS <H1>\
-    \<p style="background:red">Tanawin</p>')
-    // res.write(prm_hrml);
-    res.end(prm_hrml);
+    if(pathName === '/' || pathName ==='/home'){
+        const prm_hrml = ('\
+        \<h1>Hello Homepage <H1>\
+        \<p style="color:red">Tanawin</p>') 
+        res.end(prm_hrml);
+    }else if(pathName === '/product'){
+        res.end("<h1>Hello Product</h1>")
+    }else{
+        res.writeHead(404)
+        res.end("<h1>Not Found</h1>")
+    }
+
 })
 // server.listen(3000,()=>{
 //     console.log("Start server in port 8080")
