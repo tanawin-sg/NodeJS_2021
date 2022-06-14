@@ -6,7 +6,7 @@ const path = require('path') //เรียกใช้ module path
 const indexPage = path.join(__dirname,'../templates/index.html')
 
 //app.use("/home",(req,res)=>{  // เหมาะสำหรับ 1-2 path ถ้า path เยอะๆจะใช้ method get
-router.get("/home",(req,res)=>{
+router.get("/",(req,res)=>{
     res.status(200)
     res.type("text/html")
     res.sendFile(indexPage)
@@ -22,8 +22,9 @@ router.get("/product/:id",(req,res)=>{
     }else if (productID == 3){
         res.sendFile(path.join(__dirname,'../templates/product3.html'))
     }else{
-        res.status(404)
-        res.send("<h1>404 Page Not Found</h1>")
+        // res.status(404)
+        // res.send("<h1>404 Page Not Found</h1>")
+        res.redirect('/')
     }
     
 
