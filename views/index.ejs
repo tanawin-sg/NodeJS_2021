@@ -8,19 +8,20 @@
 </head>
 <body>
     <h1>EJS Template Engine</h1>
-    <h2>Name : <%= name %> Age : <%= age %></h2>
-    <%= address %><br>
-    <%- address %>
+    <h2>Name : <%= sname %></h2>
+    <%- lname %>
     <hr>
-    <% if(age >= 18) {%>
-        <h3>ผ่านเกณฑ์</h3>
-    <% }else{ %>
-        <h3>ไม่ผานผ่านเกณฑ์</h3>
-    <% } %>
-
-    <% for(i=1;i<=10;i++){ %>
-        <p><%=i %></p>
-    <% }%>
-
+    <%= products %><br>
+    <ol>
+        <% for(i=0;i<products.length;i++){ %>
+         <li><%= products[i] %></li>
+        <% } %>
+    </ol>
+    <ol>
+        <!-- ดึงเลข index ของสมาชิคที่อยู่ใน products ใส่ตัวแปรชื่อ index -->
+        <% for(index in products){ %>
+         <li><%= products[index] %></li>
+        <% } %>
+    </ol>
 </body>
 </html>
