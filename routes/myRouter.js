@@ -17,4 +17,10 @@ router.get('/',(req,res)=>{
     res.render('index',{products:products,sname:sname,lname:lname,products_obj:products_obj}) //index.ejs
 })
 
+router.get('/addForm',(req,res)=>{
+    res.render('form')
+})
+router.get('/manage',(req,res)=>{
+    res.render('manage')
+})
 module.exports = router
