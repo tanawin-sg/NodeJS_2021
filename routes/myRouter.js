@@ -23,4 +23,18 @@ router.get('/addForm',(req,res)=>{
 router.get('/manage',(req,res)=>{
     res.render('manage')
 })
+
+/* สำหรับ method GET
+router.get('/insert',(req,res)=>{
+    //รับค่าจาก form เก็บลง obj ชื่อ query
+    console.log(req.query.price);
+}) */
+
+router.post('/insert',(req,res)=>{
+    //รับค่าจาก form เก็บลง obj ชื่อ query
+    console.log(req.body);
+    res.render('form')
+})
+
+
 module.exports = router
