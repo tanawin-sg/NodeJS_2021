@@ -31,7 +31,7 @@ router.get('/insert',(req,res)=>{
 }) */
 
 router.post('/insert',(req,res)=>{
-    //รับค่าจาก form เก็บลง obj ชื่อ query
+    //รับค่าจาก form เก็บลง obj ชื่อ body
     console.log(req.body);
     res.render('form')
 })
