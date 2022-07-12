@@ -33,6 +33,7 @@ router.get('/insert',(req,res)=>{
 router.post('/insert',(req,res)=>{
     //รับค่าจาก form เก็บลง obj ชื่อ body
     console.log(req.body);
+    console.log(req.body.name);
     res.render('form')
 })
 

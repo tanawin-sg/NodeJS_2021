@@ -6,7 +6,7 @@ const app = express()
 
 app.set('views',path.join(__dirname,'views'))
 app.set('view engine','ejs') //setting template engine ตั้งค่านามสกุลเอนจิ้น .ejs
-app.use(express.urlencoded({extended:false})) // สำหรับส่งข้อมูลจาก form method POST
+app.use(express.urlencoded({extended:false})) // สำหรับส่งข้อมูลจาก form method POST ระบุก่อนใช้ router
 app.use(router)
 app.use(express.static(path.join(__dirname,'public')))
 
